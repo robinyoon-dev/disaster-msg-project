@@ -7,11 +7,11 @@ interface MessageProps {
 
 const Message = ({ message }: MessageProps) => {
   return (
-    <div>
+    <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <div>{message.create_date}</div>
       <div>{message.location_name}</div>
       <div>{message.md101_sn}</div>
-      <div>{message.msg}</div>
+      <p className="text-gray-700 text-base">{message.msg}</p>
     </div>
   );
 };
