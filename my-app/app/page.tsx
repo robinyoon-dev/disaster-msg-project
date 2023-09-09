@@ -35,11 +35,10 @@ export default async function Home() {
       </div>
 
       <div className={styles.center}>
-        <h1>오늘의 재난 문자 발송</h1>
 
-        <Suspense fallback={<p>불러오는 중입니다...</p>}>
-          {data && <MessagesList initialMessages={data} />}
-        </Suspense>
+        {/* <Suspense fallback={<p>불러오는 중입니다...</p>}> */}
+        <MessagesList initialMessages={data} />
+        {/* </Suspense> */}
       </div>
     </main>
   );

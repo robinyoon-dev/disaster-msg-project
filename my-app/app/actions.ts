@@ -17,15 +17,17 @@ async function getData(page: number) {
   const serviceKey = config.serviceKey;
   const url =
     "https://apis.data.go.kr/1741000/DisasterMsg3/getDisasterMsg1List";
-  let numOfRows = 10;
+  let numOfRows = 5;
 
   const finalURL =
     url +
     `?serviceKey=${serviceKey}&pageNo=${page}&numOfRows=${numOfRows}&type=json`;
 
-  const res = await fetch(finalURL, {
-    next: { revalidate: 10 },
-  });
+  const res = await fetch(finalURL, { cache: "force-cache" });
+
+  //   const res = await fetch(finalURL, {
+  //     next: { revalidate: 10 },
+  //   });
 
   const data = res.json();
 
