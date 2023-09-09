@@ -6,5 +6,6 @@ This project is a website that displays the status of disaster text message aler
 ## The purposes of this project.
 - Practice TypeScript + React.
 - Practice using OPEN API.
+- Practice Tailwind CSS.
 - Practice using Pull Requests on my own for better code review.
 - Know how to make infinite scroll.
