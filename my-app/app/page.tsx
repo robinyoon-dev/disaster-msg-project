@@ -1,16 +1,46 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import config from "@/config/serviceKey.config";
+import { DOMParser } from "xmldom";
+
+interface MisfortuneSituationNoticeMsgInfo {
+  msg_id: string; //메세지 ID
+  msg_seq: number; //메시지번호
+  clmy_pttn_cd: string; //재난유형분류명
+  clmy_pttn_nm: string; //재난유형명
+  titl: string; //메시지제목
+  cnts1: string; //메시지내용 //xmlString
+  inpt_date: string; //수신일시
+}
 
 interface MsgInfo {
   create_date: string;
-  location_id: string; //숫자로
+  location_id: string;
   location_name: string;
-  md101_sn: string; //숫자로
+  md101_sn: string;
   msg: string;
   send_platform: string;
 }
+
+// async function getMisfortuneSituationNoticeMsgData(serviceKey: string) {
+//   const url =
+//     "http://apis.data.go.kr/1741000/MisfortuneSituationNoticeMsg3/getMisfortuneSituationNoticeMsg1List";
+//   let pageNo = 1;
+//   let numOfRows = 5;
+
+//   const finalURL =
+//     url +
+//     `?serviceKey=${serviceKey}&pageNo=${pageNo}&numOfRows=${numOfRows}&type=json`;
+
+//   const res = await fetch(finalURL, {
+//     next: { revalidate: 30 },
+//   });
+
+//   const data = res.json();
+
+//   return data;
+// }
 
 async function getData(serviceKey: string) {
   const url =
@@ -36,7 +66,17 @@ async function getData(serviceKey: string) {
 export default async function Home() {
   const serviceKey = config.serviceKey;
 
-  const data = await getData(serviceKey);
+  const data = await getData(serviceKey!);
+
+  // const misfortuneData = await getMisfortuneSituationNoticeMsgData(serviceKey!);
+
+  // head
+  // const misfortune_head = misfortuneData.MisfortuneSituationNoticeMsg[0].head;
+
+  // row
+  // const misfortune_row = misfortuneData.MisfortuneSituationNoticeMsg[1].row;
+  // const misfortune_item1: MisfortuneSituationNoticeMsgInfo = misfortune_row[0];
+  // console.log(misfortune_item1);
 
   // head
   const head = data.DisasterMsg[0].head;
@@ -83,68 +123,11 @@ export default async function Home() {
         <p></p>
 
         <Suspense fallback={<p>불러오는 중입니다...</p>}>
-          {data && (
-            <>
-              <p>데이터가 들어왔어요</p>
-
-              <p>전체 결과</p>
-              <p>{totalCount}</p>
-            </>
-          )}
+          {data && <p>데이터 들어왔어요.</p>}
         </Suspense>
       </div>
 
-      <div className={styles.grid}>
-        {/* <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a> */}
-      </div>
+      <div className={styles.grid}></div>
     </main>
   );
 }
