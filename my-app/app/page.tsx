@@ -6,7 +6,7 @@ import MessagesList from "@/components/MessagesList";
 import fetchMessages from "./actions";
 
 export default async function Home() {
-  const data = await fetchMessages();
+  const data = await fetchMessages(1);
 
   return (
     <main className={styles.main}>
@@ -38,7 +38,7 @@ export default async function Home() {
         <h1>오늘의 재난 문자 발송</h1>
 
         <Suspense fallback={<p>불러오는 중입니다...</p>}>
-          {data && <MessagesList row={data} />}
+          {data && <MessagesList initialMessages={data} />}
         </Suspense>
       </div>
     </main>
