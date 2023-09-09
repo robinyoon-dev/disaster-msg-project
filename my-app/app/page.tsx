@@ -3,17 +3,10 @@ import styles from "./page.module.css";
 import { Suspense } from "react";
 
 import MessagesList from "@/components/MessagesList";
-import getData from "./getData";
+import fetchMessages from "./actions";
 
 export default async function Home() {
-  const data = await getData();
-
-  // head
-  // const head = data.DisasterMsg[0].head;
-  // console.log(head);
-
-  // row
-  const row = data.DisasterMsg[1].row;
+  const data = await fetchMessages();
 
   return (
     <main className={styles.main}>
@@ -45,7 +38,7 @@ export default async function Home() {
         <h1>오늘의 재난 문자 발송</h1>
 
         <Suspense fallback={<p>불러오는 중입니다...</p>}>
-          {row && <MessagesList row={row} />}
+          {data && <MessagesList row={data} />}
         </Suspense>
       </div>
     </main>
