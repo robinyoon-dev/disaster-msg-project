@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import { Suspense, useState } from "react";
 import config from "@/config/serviceKey.config";
 import { DOMParser } from "xmldom";
+import MessagesList from "@/components/MessagesList";
 
 interface MisfortuneSituationNoticeMsgInfo {
   msg_id: string; //메세지 ID
@@ -120,14 +121,12 @@ export default async function Home() {
 
       <div className={styles.center}>
         <h1>오늘의 재난 문자 발송</h1>
-        <p></p>
+        
 
         <Suspense fallback={<p>불러오는 중입니다...</p>}>
-          {data && <p>데이터 들어왔어요.</p>}
+          {data && <MessagesList />}
         </Suspense>
       </div>
-
-      <div className={styles.grid}></div>
     </main>
   );
 }
