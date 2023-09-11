@@ -23,7 +23,7 @@ async function getData(page: number) {
     url +
     `?serviceKey=${serviceKey}&pageNo=${page}&numOfRows=${numOfRows}&type=json`;
 
-  const res = await fetch(finalURL, { cache: "force-cache" });
+  const res = await fetch(finalURL, { cache: 'no-store' });
 
   //   const res = await fetch(finalURL, {
   //     next: { revalidate: 10 },
