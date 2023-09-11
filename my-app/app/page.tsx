@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Suspense } from "react";
 
 import MessagesList from "@/components/MessagesList";
 import fetchMessages from "./actions";
@@ -35,10 +34,7 @@ export default async function Home() {
       </div>
 
       <div className={styles.center}>
-
-        {/* <Suspense fallback={<p>불러오는 중입니다...</p>}> */}
         <MessagesList initialMessages={data} />
-        {/* </Suspense> */}
       </div>
     </main>
   );
