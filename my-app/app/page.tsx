@@ -30,9 +30,6 @@ export default async function Home() {
         <section>
           <MessagesList initialMessages={data} />
         </section>
-        <section>
-          상세 정보
-        </section>
       </main>
     </>
   );
