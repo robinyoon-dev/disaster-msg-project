@@ -15,12 +15,15 @@ const Message = ({ message }: MessageProps) => {
 
   return (
     <div className="p-2 mb-2 font-sans flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+      {/* emoji and keyword */}
       <div className=" flex flex-col justify-center items-center md:h-auto md:w-48">
         <Image src={emoji} alt={hashtag} width={70} height={70} priority />
 
         <p className="font-bold text-lg">{hashtag}</p>
       </div>
-      <div className="flex flex-col justify-between p-4 leading-normal">
+
+      {/* description */}
+      <div className="flex flex-col p-4 leading-normal justify-between items-center">
         <div className="mb-3">
           {locationArray.map((location) => (
             <div
