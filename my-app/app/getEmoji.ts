@@ -21,6 +21,8 @@ export default function getEmoji(text: string) {
     case "산사태":
         return "/landslide.svg";  
 
+    case "폭염":
+        return "/temp.svg";    
     case "방사능재난":
       return "/nuclear.svg";
 
