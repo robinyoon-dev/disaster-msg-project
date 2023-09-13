@@ -26,7 +26,7 @@ async function getData(page: number) {
   const res = await fetch(finalURL, { cache: 'no-store' });
 
     // const res = await fetch(finalURL, {
-    //   next: { revalidate: 3600 },
+    //   next: { revalidate: 60 },
     // });
 
   const data = res.json();
