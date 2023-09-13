@@ -19,17 +19,17 @@ const Message = ({ message }: MessageProps) => {
       <div className=" flex flex-col justify-center items-center md:h-auto md:w-48">
         <Image src={emoji} alt={hashtag} width={70} height={70} priority />
 
-        <p className="font-bold text-lg">{hashtag}</p>
+        <p className="font-bold text-lg text-center">{hashtag}</p>
       </div>
 
       {/* description */}
-      <div className="flex flex-col p-4 leading-normal justify-between items-center">
+      <div className="flex flex-col p-4 leading-normal justify-between items-center md:items-start">
         <div className="mb-3">
           {locationArray.map((location) => (
             <div
               key={location}
               className="
-              inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2
+              block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 mr-2 md:inline-block
               "
             >
               {location}

@@ -11,18 +11,27 @@ export default function getEmoji(text: string) {
 
     case "화재":
       return "/fire.svg";
-  
-    case "교통":
+
     case "교통사고":
+      return "/carCrash.svg";
+
+    case "교통":
       return "/traffic.svg";
 
     case "낙뢰":
-        return "/thunder.svg";
+      return "/thunder.svg";
     case "산사태":
-        return "/landslide.svg";  
+      return "/landslide.svg";
 
     case "폭염":
-        return "/temp.svg";    
+      return "/temp.svg";
+
+    case "단수":
+      return "/waterSlash.svg";
+    case "가스":
+    case "유해화학물질 유출사고":
+      return "/gasMask.svg";
+
     case "방사능재난":
       return "/nuclear.svg";
 
