@@ -20,7 +20,7 @@ const Nav = () => {
           priority
         />
 
-        <p>GitHub</p>
+        <p className=" hidden md:inline">GitHub</p>
       </a>
       <a
         href="https://velog.io/@robinyoondev"
@@ -37,7 +37,7 @@ const Nav = () => {
           height={24}
           priority
         />
-        <p>Velog</p>
+        <p className="hidden md:inline ">Velog</p>
       </a>
     </nav>
   );
