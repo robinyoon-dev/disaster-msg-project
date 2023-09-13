@@ -1,7 +1,6 @@
 import MessagesList from "@/components/MessagesList";
 import Nav from "@/components/Nav";
 import fetchMessages from "./actions";
-import { Suspense } from "react";
 
 export default async function Home() {
   const data = await fetchMessages(1);
@@ -16,9 +15,7 @@ export default async function Home() {
       </header>
       <main className="p-4 relative">
         <section>
-          <Suspense fallback={<p>Loading...</p>}>
-            {data && <MessagesList initialMessages={data} />}
-          </Suspense>
+          <MessagesList initialMessages={data} />
         </section>
       </main>
     </div>

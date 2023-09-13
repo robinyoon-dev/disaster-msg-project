@@ -6,12 +6,12 @@ import fetchMessages from "@/app/actions";
 import { useInView } from "react-intersection-observer";
 
 interface MessagesListProps {
-  initialMessages: MsgInfo[];
+  initialMessages: MsgInfo[] | undefined;
   //   children: React.ReactNode;
 }
 
 const MessagesList = ({ initialMessages }: MessagesListProps) => {
-  const [messages, setMessages] = useState<MsgInfo[]>(initialMessages);
+  const [messages, setMessages] = useState(initialMessages);
   const [page, setPage] = useState(1);
   const [ref, inView] = useInView();
 
@@ -36,10 +36,9 @@ const MessagesList = ({ initialMessages }: MessagesListProps) => {
 
   return (
     <div>
-      {messages.map((message) => (
+      {messages?.map((message) => (
         <Message key={message.md101_sn} message={message} />
       ))}
-
 
       {/* Loading spinner */}
       <div ref={ref} role="status" className="flex justify-center items-center">
