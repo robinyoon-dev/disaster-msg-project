@@ -3,7 +3,7 @@
 import getData from "./getData";
 
 
-export default async function fetchMessages(page: number) {
+export default async function fetchMessages(page?: number) {
   const data = await getData(page);
 
   // head

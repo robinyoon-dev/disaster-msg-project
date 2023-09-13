@@ -1,6 +1,6 @@
 import config from "@/config/serviceKey.config";
 
-export default async function getData(page: number) {
+export default async function getData(page?: number) {
     const serviceKey = config.serviceKey;
     const url =
       "https://apis.data.go.kr/1741000/DisasterMsg3/getDisasterMsg1List";
