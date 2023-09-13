@@ -36,7 +36,7 @@ export default function getKeywords(text: string) {
     return "우박";
   } else if (text.includes("화산")) {
     return "화산";
-  } else if (text.includes("낙뢰")) {
+  } else if (text.includes("낙뢰") || text.includes("번개")) {
     return "낙뢰";
   } else if (text.includes("건조")) {
     return "건조";
@@ -54,7 +54,7 @@ export default function getKeywords(text: string) {
     return "교통사고";
   } else if (text.includes("단수")) {
     return "단수";
-  }else if (text.includes("산불")) {
+  } else if (text.includes("산불")) {
     return "산불";
   } else if (text.includes("익사")) {
     return "익사";

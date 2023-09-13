@@ -11,10 +11,15 @@ export default function getEmoji(text: string) {
 
     case "화재":
       return "/fire.svg";
-
+  
     case "교통":
     case "교통사고":
       return "/traffic.svg";
+
+    case "낙뢰":
+        return "/thunder.svg";
+    case "산사태":
+        return "/landslide.svg";  
 
     case "방사능재난":
       return "/nuclear.svg";
