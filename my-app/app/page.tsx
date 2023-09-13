@@ -3,7 +3,12 @@ import Nav from "@/components/Nav";
 import fetchMessages from "./actions";
 
 export default async function Home() {
-  const data = await fetchMessages(1);
+  let data = [];
+  try {
+    data = await fetchMessages(1);
+  } catch (err) {
+    console.log(err);
+  }
 
   return (
     <div className=" pb-4 pl-4 pr-4 h-screen">
