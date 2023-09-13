@@ -6,8 +6,8 @@ export default async function Home() {
 
   return (
     <div className=" pb-4 pl-4 pr-4 h-screen">
-      <header className="sticky top-0 z-50 flex justify-between p-4 bg-white/95 shadow">
-        <h1 className="text-xl font-bold  text-black md:text-3xl ">재난 메시지</h1>
+      <header className="sticky top-0 z-50 flex justify-between item-center p-4 bg-white/95 shadow">
+        <h1 className="text-2xl font-bold  text-black md:text-3xl ">재난 메시지</h1>
         <Nav />
       </header>
       <main className="p-4 relative">

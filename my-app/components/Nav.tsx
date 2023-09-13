@@ -8,7 +8,7 @@ const Nav = () => {
         href="https://github.com/robinyoon-dev/disaster-msg-project"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-row justify-center items-center gap-1 font-bold py-2 px-4 
+        className=" flex flex-row justify-center items-center gap-1 font-bold py-2 px-4 
         text-black hover:text-gray-400
         "
       >
