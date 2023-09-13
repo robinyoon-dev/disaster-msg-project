@@ -8,9 +8,9 @@ export default async function Home() {
   const data = await fetchMessages(1);
 
   return (
-    <>
-      <header className={styles.header}>
-        <h1>재난 메시지</h1>
+    <div className="max-w-3xl p-4">
+      <header className="flex justify-around ">
+        <h1 className="text-3xl font-bold">재난 메시지</h1>
         <a
           href="https://github.com/robinyoon-dev/disaster-msg-project"
           target="_blank"
@@ -26,11 +26,11 @@ export default async function Home() {
           GitHub
         </a>
       </header>
-      <main className={styles.main}>
+      <main className="p-4">
         <section>
           <MessagesList initialMessages={data} />
         </section>
       </main>
-    </>
+    </div>
   );
 }
