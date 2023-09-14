@@ -7,7 +7,6 @@ export default async function fetchMessages(page: number) {
 
   // head
   // const head = data.DisasterMsg[0].head;
-  // console.log(head);
 
   // row
   return data.DisasterMsg[1].row;
@@ -27,7 +26,7 @@ async function getData(page: number) {
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+    throw new Error("Failed to fetch data");
   }
 
   // const res = await fetch(finalURL, {

@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import fetchMessages from "./actions";
 
 export default async function Home() {
-  // const data = await fetchMessages(1);
+  const data = await fetchMessages(1);
 
   return (
     <div className=" pb-4 pl-4 pr-4 h-screen">
@@ -15,8 +15,8 @@ export default async function Home() {
       </header>
       <main className="p-4 relative">
         <section>
-          {/* <MessagesList initialMessages={data} /> */}
-          <MessagesList />
+          <MessagesList initialMessages={data} />
+          {/* <MessagesList /> */}
         </section>
       </main>
     </div>
