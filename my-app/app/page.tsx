@@ -1,9 +1,10 @@
 import MessagesList from "@/components/MessagesList";
 import Nav from "@/components/Nav";
-import fetchMessages from "./actions";
+import getData from "./actions";
 
 export default async function Home() {
-  const data = await fetchMessages(1);
+  const data = await getData(1);
+  const initialMessages = data.DisasterMsg[1].row;
 
   return (
     <div className=" pb-4 pl-4 pr-4 h-screen">
@@ -15,8 +16,7 @@ export default async function Home() {
       </header>
       <main className="p-4 relative">
         <section>
-          <MessagesList initialMessages={data} />
-          {/* <MessagesList /> */}
+          <MessagesList initialMessages={initialMessages} />
         </section>
       </main>
     </div>

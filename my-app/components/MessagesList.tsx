@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Message from "./Message";
 import MsgInfo from "@/models/MsgInfo";
-import fetchMessages from "@/app/actions";
+import getData from "@/app/actions";
 import { useInView } from "react-intersection-observer";
 
 interface MessagesListProps {
@@ -16,7 +16,8 @@ const MessagesList = ({ initialMessages }: MessagesListProps) => {
 
   async function loadMoreMessages() {
     const next = page + 1;
-    const fetchedMessages = await fetchMessages(next);
+    const data = await getData(next);
+    const fetchedMessages = data.DisasterMsg[1].row;
 
     if (fetchedMessages?.length) {
       setPage(next);
