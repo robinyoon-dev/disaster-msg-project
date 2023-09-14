@@ -35,7 +35,7 @@ const MessagesList = ({ initialMessages }: MessagesListProps) => {
 
   return (
     <div>
-      {messages&& messages?.map((message) => (
+      {messages?.map((message) => (
         <Message key={message.md101_sn} message={message} />
       ))}
 
