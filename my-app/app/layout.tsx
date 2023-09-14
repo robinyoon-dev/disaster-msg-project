@@ -1,6 +1,4 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
-
 
 export const metadata = {
   title: "전국 재난 톡",
