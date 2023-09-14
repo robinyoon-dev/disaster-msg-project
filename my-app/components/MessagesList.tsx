@@ -5,13 +5,15 @@ import MsgInfo from "@/models/MsgInfo";
 import fetchMessages from "@/app/actions";
 import { useInView } from "react-intersection-observer";
 
-interface MessagesListProps {
-  initialMessages: MsgInfo[] | undefined;
-  //   children: React.ReactNode;
-}
+// interface MessagesListProps {
+//   initialMessages: MsgInfo[] | undefined;
+//   //   children: React.ReactNode;
+// }
 
-const MessagesList = ({ initialMessages }: MessagesListProps) => {
-  const [messages, setMessages] = useState(initialMessages);
+// { initialMessages }: MessagesListProps
+
+const MessagesList = () => {
+  const [messages, setMessages] = useState<MsgInfo[] | undefined>();
   const [page, setPage] = useState(1);
   const [ref, inView] = useInView();
 
@@ -27,6 +29,15 @@ const MessagesList = ({ initialMessages }: MessagesListProps) => {
       ]);
     }
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchMessages(1);
+      setMessages(data);
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     if (inView) {
