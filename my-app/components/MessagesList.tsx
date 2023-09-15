@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import Message from "./Message";
 import MsgInfo from "@/models/MsgInfo";
-import getData from "@/app/actions";
 import { useInView } from "react-intersection-observer";
+import getData from "@/app/actions";
 
 interface MessagesListProps {
   initialMessages: MsgInfo[] | undefined;
