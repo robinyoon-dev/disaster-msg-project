@@ -9,7 +9,8 @@ const Nav = () => {
         target="_blank"
         rel="noopener noreferrer"
         className=" flex flex-row justify-center items-center gap-1 font-bold py-2 px-4 
-        text-black hover:text-gray-400
+        text-black dark:text-gray-400  hover:text-gray-400
+        dark:hover:text-gray-100
         "
       >
         <Image
@@ -27,7 +28,8 @@ const Nav = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="flex flex-row justify-center items-center gap-1 font-bold py-2 px-4 
-        text-black hover:text-gray-400
+        text-black dark:text-gray-400 hover:text-gray-400
+        dark:hover:text-gray-100
         "
       >
         <Image
