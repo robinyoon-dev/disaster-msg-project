@@ -17,9 +17,18 @@ const Message = ({ message }: MessageProps) => {
     <div className="p-2 mb-2 font-sans flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
       {/* emoji and keyword */}
       <div className=" flex flex-col justify-center items-center md:h-auto md:w-48">
-        <Image src={emoji} alt={hashtag} width={70} height={70} priority />
+        <Image
+          className="dark:invert"
+          src={emoji}
+          alt={hashtag}
+          width={70}
+          height={70}
+          priority
+        />
 
-        <p className="font-bold text-lg text-center dark:text-gray-400">{hashtag}</p>
+        <p className="font-bold text-lg text-center dark:text-gray-300">
+          {hashtag}
+        </p>
       </div>
 
       {/* description */}
@@ -30,7 +39,7 @@ const Message = ({ message }: MessageProps) => {
               key={location}
               className="
               block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 mr-2 md:inline-block
-              dark:text-gray-400
+              dark:text-gray-300
               dark:bg-gray-600
               "
             >
@@ -39,10 +48,10 @@ const Message = ({ message }: MessageProps) => {
           ))}
         </div>
 
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
           {message.msg}
         </p>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-300">
           {message.create_date}
         </p>
       </div>
