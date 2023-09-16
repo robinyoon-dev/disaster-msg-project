@@ -6,7 +6,13 @@ export default function getKeywords(text: string) {
       text.includes("목격된"))
   ) {
     return "실종";
-  } else if (text.includes("호우")) {
+  } else if (text.includes("산사태 경보") || text.includes("산사태 주의")) {
+    return "산사태";
+  } else if (
+    text.includes("호우") ||
+    text.includes("많은 비") ||
+    text.includes("강한 비")
+  ) {
     return "호우";
   } else if (text.includes("대설")) {
     return "대설";
