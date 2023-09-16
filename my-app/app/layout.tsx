@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "전국 재난 톡",
     description: "전국 각 지역에서 발송된 재난 메시지를 볼 수 있습니다.",
+    site: "@robinyoondev",
     creator: "@robinyoondev",
     images: [
       {
