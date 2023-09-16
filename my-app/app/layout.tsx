@@ -31,12 +31,7 @@ export const metadata: Metadata = {
     description: "전국 각 지역에서 발송된 재난 메시지를 볼 수 있습니다.",
     site: "@robinyoondev",
     creator: "@robinyoondev",
-    images: [
-      {
-        url: "https://disaster-msg-project.vercel.app/ogimage.png",
-        alt: "전국 재난 톡",
-      },
-    ],
+    images: ["https://disaster-msg-project.vercel.app/ogimage.png"],
   },
 };
 
