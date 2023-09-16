@@ -4,10 +4,16 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "전국 재난 톡",
   description: "전국 각 지역에서 발송된 재난 메시지를 볼 수 있습니다.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
   openGraph: {
     title: "전국 재난 톡",
     description: "전국 각 지역에서 발송된 재난 메시지를 볼 수 있습니다.",
     type: "website",
+    siteName: "전국 재난 톡",
     url: "https://disaster-msg-project.vercel.app/",
     locale: "ko_KR",
     images: [
@@ -27,8 +33,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://disaster-msg-project.vercel.app/ogimage.png",
-        width: 1200,
-        height: 630,
         alt: "전국 재난 톡",
       },
     ],
