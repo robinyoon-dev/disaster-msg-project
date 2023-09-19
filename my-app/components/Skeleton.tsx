@@ -8,24 +8,27 @@ const Skeleton = () => {
     >
       {/* emoji and keyword */}
       <div className=" flex-none basis-20 flex flex-col justify-center items-center md:h-auto md:w-48">
-        <div className="rounded-full bg-gray-200 h-10 w-10"></div>
+        <div className="rounded-full bg-gray-200 h-16 w-16 dark:bg-gray-700 "></div>
 
-        <div className=" h-2.5 bg-gray-200"></div>
+        <div className=" h-4 w-10 bg-gray-200 rounded-full mt-4 dark:bg-gray-700  "></div>
       </div>
 
       {/* description */}
-      <div className="flex flex-col p-4">
+      <div className="flex flex-col p-4 w-full ">
         <div className="mb-3 ">
           <div
             className="
-              block bg-gray-200 rounded-full px-3 py-1 mb-2 mr-2  w-48 md:inline-block
-              dark:bg-gray-600
+              block bg-gray-200 rounded-full px-3 py-1 mb-2 mr-2 h-6 w-32 md:inline-block
+              dark:bg-gray-700 
               "
           ></div>
         </div>
 
-        <div className="mb-3 h-2 max-w-[480px] bg-gray-200 rounded"></div>
-        <div className="mb-3 h-2 max-w-[480px] bg-gray-200 rounded"></div>
+        <div className="mb-3 h-4 w-full bg-gray-200 dark:bg-gray-700  rounded-full"></div>
+        <div className="mb-3 h-4 w-full bg-gray-200 dark:bg-gray-700  rounded-full"></div>
+        <div className="mb-3 h-4 w-full bg-gray-200 dark:bg-gray-700  rounded-full"></div>
+
+        <div className="mb-3 h-4 w-48  bg-gray-200 dark:bg-gray-700  rounded-full"></div>
       </div>
     </div>
   );
