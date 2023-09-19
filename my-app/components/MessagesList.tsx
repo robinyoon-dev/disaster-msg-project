@@ -4,6 +4,7 @@ import Message from "./Message";
 import MsgInfo from "@/models/MsgInfo";
 import { useInView } from "react-intersection-observer";
 import getData from "@/app/actions";
+import Skeleton from "./Skeleton";
 
 interface MessagesListProps {
   initialMessages: MsgInfo[] | undefined;
@@ -36,6 +37,7 @@ const MessagesList = ({ initialMessages }: MessagesListProps) => {
 
   return (
     <div>
+      <Skeleton/>
       {messages?.map((message) => (
         <Message key={message.md101_sn} message={message} />
       ))}
