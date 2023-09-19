@@ -4,6 +4,7 @@ import getKeywords from "@/app/getKeywords";
 import Image from "next/image";
 import getEmoji from "@/app/getEmoji";
 import getLocationArray from "@/app/getLocationArray";
+
 interface MessageProps {
   message: MsgInfo;
 }
