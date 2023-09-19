@@ -14,7 +14,7 @@ const Skeleton = () => {
       </div>
 
       {/* description */}
-      <div className="flex flex-col p-4 w-full ">
+      <div className="flex flex-col p-4 w-full justify-between items-center md:items-start ">
         <div className="mb-3 ">
           <div
             className="
