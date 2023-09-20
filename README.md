@@ -1,5 +1,6 @@
 # 전국 재난 톡
 이 웹사이트에서는 전국 각 지역에서 발송된 재난 메시지를 볼 수 있습니다.  
+🔗[업데이트 노트](https://robinyoondev.notion.site/8a0f10e1f24a4bd2aaf423083c498d08?v=225b7ff0a5dd4f80b4300165fcec80de&pvs=4)
 
 - PC 버전
   
@@ -11,7 +12,6 @@
 
 
 # 기본 정보
-
 - 제작 기간: 2023.09.09 ~ 2023.09.15
 - 제작 인원: 1명
 - 기술 스택: Next.js 13, TypeScript, Tailwind CSS, React.js.
