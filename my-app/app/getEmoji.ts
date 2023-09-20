@@ -35,6 +35,9 @@ export default function getEmoji(text: string) {
     case "폭염":
       return "/temp.svg";
 
+    case "홍수":
+      return "/flood.svg";
+
     case "단수":
       return "/waterSlash.svg";
     case "가스":
@@ -47,6 +50,9 @@ export default function getEmoji(text: string) {
     case "강풍":
       return "/wind.svg";
 
+    case "풍랑":
+      return "/stormSea.svg";
+      
     case "태풍":
       return "/typhoon.svg";
 
