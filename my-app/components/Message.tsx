@@ -50,7 +50,7 @@ const Message = ({ message }: MessageProps) => {
               <div
                 key={location}
                 className="
-              block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mb-2 mr-2 md:inline-block
+              block bg-gray-200 rounded-full text-center px-3 py-1 text-sm font-semibold text-gray-700 mb-2 mr-2 md:inline-block
               dark:text-gray-300
               dark:bg-gray-600
               "
