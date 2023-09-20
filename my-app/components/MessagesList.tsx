@@ -45,8 +45,6 @@ const MessagesList = ({ initialMessages }: MessagesListProps) => {
       <div ref={ref}>
         <Skeleton />
       </div>
-
-     
     </div>
   );
 };
