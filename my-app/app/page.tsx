@@ -2,7 +2,9 @@ import MessagesList from "@/components/MessagesList";
 import Nav from "@/components/Nav";
 import getData from "./actions";
 
+
 export default async function Home() {
+  
   const data = await getData(1);
   const initialMessages = data.DisasterMsg[1].row;
 
