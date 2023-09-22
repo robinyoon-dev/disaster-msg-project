@@ -4,7 +4,7 @@ import getData from "./actions";
 
 
 export default async function Home() {
-  
+  process.env.__NEXT_PRIVATE_PREBUNDLED_REACT = "experimental";
   const data = await getData(1);
   const initialMessages = data.DisasterMsg[1].row;
 
