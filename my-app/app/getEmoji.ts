@@ -15,6 +15,7 @@ export default function getEmoji(text: string) {
     case "지진":
       return "/earthquake.svg";
 
+    case "산불":
     case "화재":
       return "/fire.svg";
 
