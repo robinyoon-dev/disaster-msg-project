@@ -6,27 +6,8 @@ export default function getKeywords(text: string) {
       text.includes("목격된"))
   ) {
     return "실종";
-  } else if (
-    text.includes("산사태 경보") ||
-    text.includes("산사태 주의보") ||
-    text.includes("산사태경보") ||
-    text.includes("산사태주의보")
-  ) {
+  } else if (text.includes("산사태 경보") || text.includes("산사태 주의보") || text.includes("산사태경보") || text.includes("산사태주의보")) {
     return "산사태";
-  } else if (
-    text.includes("강풍주의보") ||
-    text.includes("강풍경보") ||
-    text.includes("강풍 주의보") ||
-    text.includes("강풍 경보")
-  ) {
-    return "강풍";
-  } else if (
-    text.includes("풍랑주의보") ||
-    text.includes("풍랑경보") ||
-    text.includes("풍랑 주의보") ||
-    text.includes("풍랑 경보")
-  ) {
-    return "풍랑";
   } else if (
     text.includes("호우") ||
     text.includes("많은 비") ||
