@@ -4,8 +4,7 @@
 
 - PC 버전
   
-![전국재난톡_스켈레톤](https://github.com/robinyoon-dev/disaster-msg-project/assets/107087958/14c4c391-c0ff-478a-a7c4-26d63b121e1e)
-
+![전국재난톡1](https://github.com/robinyoon-dev/disaster-msg-project/assets/107087958/fe85745f-e1da-4ec1-a075-9af3eb711cf3)
 
 - 모바일 버전
   
@@ -62,7 +61,4 @@
 - [x] 1. 웹 서버에서 발생한 에러 고치기.
 - [ ] 2. 새로운 정보가 들어왔을 때, 유저가 새로고침을 하지 않고도 새로운 정보를 볼 수 있도록 구현하기.
 - [x] 3. 실종인 경우 메시지 클릭 시 상세 페이지 이동할 수 있도록 구현하기.
-      ![전국재난톡_실종](https://github.com/robinyoon-dev/disaster-msg-project/assets/107087958/8c9f7d4a-f79c-4469-b994-f79ce2d519ad)
-
 - [x] 4. 스켈레톤 UI 추가.
-![전국재난톡 - 스켈레톤](https://github.com/robinyoon-dev/disaster-msg-project/assets/107087958/8ffe2aab-49ca-4358-8e5d-6a54ba585a32)
