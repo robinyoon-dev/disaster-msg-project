@@ -1,7 +1,6 @@
 import MessagesList from "@/components/MessagesList";
 import Nav from "@/components/Nav";
 import getData from "./actions";
-import ScrollToTopBtn from "@/components/ScrollToTopBtn";
 
 export default async function Home() {
   const data = await getData(1);
@@ -20,7 +19,6 @@ export default async function Home() {
           <MessagesList initialMessages={initialMessages} />
         </section>
 
-        <ScrollToTopBtn />
       </main>
     </div>
   );
