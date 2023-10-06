@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Message from "./Message";
+import {MemoizedMessage} from "./Message";
 import MsgInfo from "@/models/MsgInfo";
 import { useInView } from "react-intersection-observer";
 import getData from "@/app/actions";
@@ -38,7 +38,7 @@ const MessagesList = ({ initialMessages }: MessagesListProps) => {
   return (
     <div>
       {messages?.map((message) => (
-        <Message key={message.md101_sn} message={message} />
+        <MemoizedMessage key={message.md101_sn} message={message} />
       ))}
 
       {/* Loading spinner */}

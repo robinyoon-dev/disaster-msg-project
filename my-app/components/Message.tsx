@@ -6,6 +6,7 @@ import getEmoji from "@/app/getEmoji";
 import getLocationArray from "@/app/getLocationArray";
 // import Link from "next/link";
 import getLink from "@/app/getLink";
+import React from "react";
 
 interface MessageProps {
   message: MsgInfo;
@@ -14,6 +15,8 @@ interface MessageProps {
 const Message = ({ message }: MessageProps) => {
   const hashtag = getKeywords(message.msg);
   const emoji = getEmoji(hashtag);
+
+  console.log(hashtag);
 
   let hrefLink: string;
   if (hashtag === "실종") {
@@ -72,4 +75,4 @@ const Message = ({ message }: MessageProps) => {
   );
 };
 
-export default Message;
+export const MemoizedMessage = React.memo(Message);

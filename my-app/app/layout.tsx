@@ -40,7 +40,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  process.env.__NEXT_PRIVATE_PREBUNDLED_REACT = "experimental";
+
   return (
     <html lang="ko" className="dark">
       <body className="dark:bg-gray-900">{children}</body>
