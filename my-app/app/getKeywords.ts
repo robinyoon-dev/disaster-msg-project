@@ -1,98 +1,71 @@
+interface KeywordMap {
+  [keyword: string]: string[];
+}
+
 export default function getKeywords(text: string) {
-  if (
-    text.includes("☎182") &&
-    (text.includes("실종된") ||
-      text.includes("배회중인") ||
-      text.includes("목격된"))
-  ) {
-    return "실종";
-  } else if (text.includes("산사태 경보") || text.includes("산사태 주의보") || text.includes("산사태경보") || text.includes("산사태주의보")) {
-    return "산사태";
-  } else if (
-    text.includes("호우") ||
-    text.includes("많은 비") ||
-    text.includes("강한 비")
-  ) {
-    return "호우";
-  } else if (text.includes("대설")) {
-    return "대설";
-  } else if (text.includes("강풍")) {
-    return "강풍";
-  } else if (text.includes("태풍")) {
-    return "태풍";
-  } else if (text.includes("해일")) {
-    return "해일";
-  } else if (text.includes("폭풍우")) {
-    return "폭풍우";
-  } else if (text.includes("지진")) {
-    return "지진";
-  } else if (text.includes("돌풍")) {
-    return "돌풍";
-  } else if (text.includes("지진해일")) {
-    return "지진해일";
-  } else if (text.includes("황사")) {
-    return "황사";
-  } else if (text.includes("산사태")) {
-    return "산사태";
-  } else if (text.includes("홍수")) {
-    return "홍수";
-  } else if (text.includes("가뭄")) {
-    return "가뭄";
-  } else if (text.includes("우박")) {
-    return "우박";
-  } else if (text.includes("화산")) {
-    return "화산";
-  } else if (text.includes("낙뢰") || text.includes("번개")) {
-    return "낙뢰";
-  } else if (text.includes("건조")) {
-    return "건조";
-  } else if (text.includes("병충해")) {
-    return "병충해";
-  } else if (text.includes("안개")) {
-    return "안개";
-  } else if (text.includes("폭염")) {
-    return "폭염";
+  const keywordMap: KeywordMap = {
+    실종: ["☎182"],
+    산사태: ["산사태"],
+    호우: ["호우", "많은 비", "강한 비"],
+    대설: ["대설"],
+    강풍: ["강풍"],
+    태풍: ["태풍"],
+    해일: ["해일"],
+    폭풍우: ["폭풍우"],
+    지진: ["지진"],
+    돌풍: ["돌풍"],
+    지진해일: ["지진해일"],
+    황사: ["황사"],
+    홍수: ["홍수"],
+    가뭄: ["가뭄"],
+    우박: ["우박"],
+    화산: ["화산"],
+    낙뢰: ["낙뢰", "번개"],
+    건조: ["건조"],
+    병충해: ["병충해"],
+    안개: ["안개"],
+    폭염: ["폭염"],
+    화재: ["화재"],
+    교통사고: ["교통사고"],
+    단수: ["단수"],
+    산불: ["산불"],
+    익사: ["익사"],
+    폭발: ["폭발"],
+    가스: ["가스"],
+    붕괴: ["붕괴"],
+    전기가스: ["전기가스"],
+    상하수도: ["상하수도"],
+    매몰: ["매몰"],
+    방사능재난: ["방사능"],
+    "유해화학물질 유출사고": ["화학물질", "누출", "화학사고"],
+    정전: ["정전"],
+    교통: ["교통", "도로"],
+    감염병: ["감염병", "코로나"],
+    식중독: ["식중독"],
+  };
+
+  let finalText = "";
+
+  if (text.includes("경보")) {
+    finalText = getTextInFrontOf("경보");
+  } else if (text.includes("주의보")) {
+    finalText = getTextInFrontOf("주의보");
+  } else {
+    finalText = text;
   }
 
-  if (text.includes("화재")) {
-    return "화재";
-  } else if (text.includes("교통사고")) {
-    return "교통사고";
-  } else if (text.includes("단수")) {
-    return "단수";
-  } else if (text.includes("산불")) {
-    return "산불";
-  } else if (text.includes("익사")) {
-    return "익사";
-  } else if (text.includes("폭발")) {
-    return "폭발";
-  } else if (text.includes("가스")) {
-    return "가스";
-  } else if (text.includes("붕괴")) {
-    return "붕괴";
-  } else if (text.includes("전기가스")) {
-    return "전기가스";
-  } else if (text.includes("상하수도")) {
-    return "상하수도";
-  } else if (text.includes("매몰")) {
-    return "매몰";
-  } else if (text.includes("방사능")) {
-    return "방사능재난";
-  } else if (
-    text.includes("화학물질") ||
-    text.includes("누출") ||
-    text.includes("화학사고")
-  ) {
-    return "유해화학물질 유출사고";
-  } else if (text.includes("정전")) {
-    return "정전";
-  } else if (text.includes("교통") || text.includes("도로")) {
-    return "교통";
-  } else if (text.includes("감염병") || text.includes("코로나")) {
-    return "감염병";
-  } else if (text.includes("식중독")) {
-    return "식중독";
-  } else {
-    return "기타";
+  for (const keyword in keywordMap) {
+    for (const word of keywordMap[keyword]) {
+      if (finalText.includes(word)) {
+        return keyword;
+      }
+    }
+  }
+
+  return "기타";
+
+  function getTextInFrontOf(specificWord: string) {
+    const indexOfWord = text.indexOf(specificWord);
+    return text.slice(0, indexOfWord);
   }
 }
