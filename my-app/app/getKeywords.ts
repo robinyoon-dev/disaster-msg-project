@@ -56,7 +56,8 @@ export default function getKeywords(text: string) {
 
   for (const keyword in keywordMap) {
     for (const word of keywordMap[keyword]) {
-      if (finalText.includes(word)) {
+      let regexp = new RegExp(`(\\s|])${word}`);
+      if (regexp.test(finalText)) {
         return keyword;
       }
     }
