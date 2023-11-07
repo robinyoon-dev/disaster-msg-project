@@ -33,11 +33,17 @@ export default function getEmoji(text: string) {
     case "산사태":
       return "/landslide.svg";
 
+    case "풍랑":
+    case "연안사고":
+      return "/wave.svg";  
+
+    case "한파":
     case "폭염":
       return "/temp.svg";
 
     case "단수":
       return "/waterSlash.svg";
+
     case "가스":
     case "유해화학물질 유출사고":
       return "/gasMask.svg";
