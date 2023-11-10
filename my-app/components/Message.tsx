@@ -25,7 +25,7 @@ const Message = ({ message }: MessageProps) => {
   const locationArray = getLocationArray(message.location_name);
 
   return (
-    <a href={hrefLink}>
+    <a href={hrefLink} className={hashtag === "실종" ? "cursor-pointer" : "cursor-default"}>
       <div className="p-2 mb-2 font-sans flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
         {/* emoji and keyword */}
         <div className=" flex-none basis-20 flex flex-col justify-center items-center md:h-auto md:w-48">
